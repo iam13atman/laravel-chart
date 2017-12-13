@@ -18,7 +18,8 @@
             <div id="app">
 
             <div class="content">
-                <example-component></example-component>
+                {{--<example-component></example-component>--}}
+                <map-component></map-component>
             </div>
             </div>
         </div>

@@ -19,8 +19,6 @@
     export default {
         data () {
             return {
-                data:'',
-                chartdata : '',
                 labels:''
             }
         },
@@ -29,15 +27,14 @@
                 axios.get('/salary').then((response) => {
                     _.map(response.data, (num, key) => {
                         this.labels = num;
-                        this.chartdata = key
                     });
                     let canvas = this.$refs.canvas.getContext('2d');
                     let chartData = new Chart(canvas, {
-                        type: 'bar',
+                        type: 'line',
                         data: {
                             labels: Object.keys(this.labels),
                             datasets: [{
-                                label: '# of Votes',
+                                label: 'Salary',
                                 data: Object.values(this.labels),
                                 /*backgroundColor: [
                                     'rgba(255, 99, 132, 0.2)',

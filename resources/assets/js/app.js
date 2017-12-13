@@ -6,9 +6,11 @@
  */
 
 require('./bootstrap');
+require('highcharts');
 
 window.Vue = require('vue');
 window.Chart = require('chart.js');
+window.HighMaps = require('highcharts/highmaps');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -17,6 +19,7 @@ window.Chart = require('chart.js');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('map-component', require('./components/MapComponent.vue'));
 
 const app = new Vue({
     el: '#app'
